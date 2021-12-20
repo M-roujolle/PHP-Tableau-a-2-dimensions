@@ -22,13 +22,12 @@ require "controllers/controller_index.php";
 
 
 
-    <!-- <a type="button" class="btn btn-success" href="meal.php?food=<?= $value ?>"><?= $value ?></a> -->
     <div class="justify-content-evenly ps-1">
-        <div class="row row-cols-1 row-cols-md-2 g-4 m-auto">
+        <div class="row row-cols-1 row-cols-md-2 g-2 m-auto">
             <?php foreach ($myArray as $key => $value) { ?>
 
                 <div class="col">
-                    <div class="card border border-dark">
+                    <div class="card">
                         <img src="<?= $value["picture"] ?>" class="card-img-top" alt="photo" height="350px">
                         <div class="card-body bg bg-dark text-white">
                             <h2 class="card-title text-success text-center"><?= $value["name"] ?></h2>
@@ -41,31 +40,9 @@ require "controllers/controller_index.php";
 
                             <div class="text-center">
                                 <!-- Button trigger modal -->
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal<?= $key ?>">
+                                <a href="details.php?id=<?= $value["id"] ?>" class="btn btn-primary">
                                     + d'infos
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModal<?= $key ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">
-                                    <p><?= $value["descriptif"] ?></p>
-                                </h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <img class="img-fluid" src="<?= $value["picture"] ?>">
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                                </a>
                             </div>
                         </div>
                     </div>
